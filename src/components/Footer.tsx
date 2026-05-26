@@ -2,6 +2,7 @@
 // Simple, minimal footer with navigation and social links
 
 import React from 'react';
+import Link from 'next/link';
 
 export const Footer: React.FC = () => {
   return (
@@ -23,14 +24,14 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-sm font-light">
               <li>
-                <a href="/blog" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/blog" className="text-gray-400 hover:text-accent transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-gray-400 hover:text-accent transition-colors">
+                <Link href="/about" className="text-gray-400 hover:text-accent transition-colors">
                   About
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

@@ -2,8 +2,14 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/data/blogs';
 
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((item) => item.slug === params.slug);
+type BlogDetailPageProps = {
+  params?: Promise<{ slug: string }>;
+};
+
+export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
+  const resolvedParams = await params;
+  const slug = resolvedParams?.slug;
+  const post = blogPosts.find((item) => item.slug === slug);
 
   if (!post) {
     notFound();
