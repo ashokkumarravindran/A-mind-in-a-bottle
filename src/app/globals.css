@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root styles */
+* {
+  @apply antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Typography enhancements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-serif;
+}
+
+/* Link styles */
+a {
+  @apply transition-colors duration-300;
+}
+
+/* Smooth transitions */
+@layer components {
+  .smooth-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent;
+  }
+
+  /* Utility for limiting max-width content */
+  .content-container {
+    @apply max-w-5xl mx-auto;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-accent/20 text-brand;
+}
+.star-field {
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.45) 1px, transparent 1px);
+  background-size: 90px 90px, 140px 140px;
+  animation: driftStars 40s linear infinite;
+}
+
+@keyframes driftStars {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 500px 300px, -400px 250px;
+  }
+}
+
+.shooting-star {
+  animation: shootingStar 7s ease-in-out infinite;
+}
+
+@keyframes shootingStar {
+  0%, 65% {
+    opacity: 0;
+    transform: translateX(0) translateY(0) rotate(-20deg);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120vw) translateY(35vh) rotate(-20deg);
+  }
+}
+
+.road-light {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 200, 120, 0.25),
+    transparent
+  );
+  animation: roadLight 4s ease-in-out infinite;
+}
+
+@keyframes roadLight {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(60%);
+  }
+}
