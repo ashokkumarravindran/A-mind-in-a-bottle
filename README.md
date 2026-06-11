@@ -1,7 +1,6 @@
 # A Mind in a Bottle - Immersive Blog Experience
 
-A modern, Apple-inspired blog redesign built with Next.js, Tailwind CSS, and Framer Motion. This project transforms traditional blog content into an immersive, scrollable reading experience with subtle animations and premium visual design.
-
+A modern, Apple-inspired blog redesign built with Next.js, Tailwind CSS, and Framer Motion. 
 ## 🎯 Project Overview
 
 This is a redesign experiment for "A Mind in a Bottle" (amindinabottle.com), featuring:
